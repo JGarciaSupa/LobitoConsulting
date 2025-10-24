@@ -1,8 +1,23 @@
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { Services } from "@/components/Services";
+import { Portfolio } from "@/components/Portfolio";
+import { Features } from "@/components/Features";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+
 export default function Home() {
   return (
-    <div className="w-full min-h-dvh flex flex-col items-center justify-center bg-[#D78131] p-4">
-      <img className="w-full max-w-[280px]" src="/logo.webp" alt="Logo" />
-      <h1 className="text-white text-4xl font-light italic mt-4">Lobito Consulting</h1>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <Services />
+      <Portfolio />
+      <Features />
+      <Contact />
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
