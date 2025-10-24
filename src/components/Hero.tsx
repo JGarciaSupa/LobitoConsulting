@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Code2, Rocket, Zap, Star } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export function Hero() {
   // Estado para las partículas flotantes
@@ -102,35 +103,43 @@ export function Hero() {
       {/* Contenido principal */}
       <div className="container max-w-360 mx-auto px-4 md:px-6 lg:px-12 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Badge superior */}
-          <motion.div
-            className="flex justify-center mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/30 backdrop-blur-sm mt-12">
-              <Star className="w-4 h-4 text-purple-400 fill-purple-400" />
-              <span className="text-sm text-purple-300">Soluciones Digitales de Vanguardia</span>
-              <div className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-            </div>
-          </motion.div>
-          
           {/* Título principal */}
           <motion.div
-            className="text-center mb-8"
+            className="text-center mb-8 mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="text-6xl md:text-7xl lg:text-8xl mb-6 tracking-tight">
-              <span className="block bg-linear-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-                Lobito
-              </span>
-              <span className="block bg-linear-to-r from-purple-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent pb-4">
-                Consulting
+            <Image
+              src="/logo.webp"
+              alt="Lobito Consulting Logo"
+              width={240}
+              height={240}
+              className="mx-auto mb-4"
+            />
+            <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 tracking-tight flex">
+              {/* <span className="block bg-linear-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+                Lobito 
+              </span> */}
+              <span className="block bg-linear-to-r from-purple-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent pb-4 text-center w-full">
+                Lobito Consulting
               </span>
             </h1>
+
+            {/* Badge superior */}
+            <motion.div
+              className="flex justify-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-linear-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/30 backdrop-blur-sm -mt-2">
+                <Star className="w-4 h-4 text-purple-400 fill-purple-400" />
+                <span className="text-sm text-purple-300">Soluciones Digitales de Vanguardia</span>
+                <div className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+              </div>
+            </motion.div>
+
           </motion.div>
           
           {/* Subtítulo */}

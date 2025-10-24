@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Code2, Smartphone, Globe, Palette, Zap, Cpu } from "lucide-react";
+import { Code2, Smartphone, Globe, Palette, Zap, Cpu, BarChart3, Building2, Layers, Workflow, Bot, Database } from "lucide-react";
 import { Card } from "./ui/card";
 
 const services = [
@@ -40,6 +40,42 @@ const services = [
     title: "Integración de APIs",
     description: "Conectamos tus sistemas con servicios externos para expandir funcionalidades.",
     gradient: "from-green-500 to-emerald-500",
+  },
+  {
+    icon: BarChart3,
+    title: "Power BI & Analytics",
+    description: "Transforma datos en insights accionables con soluciones de análisis avanzadas.",
+    gradient: "from-blue-600 to-indigo-600",
+  },
+  {
+    icon: Building2,
+    title: "SAP Business One",
+    description: "Implementación y personalización de SAP Business One para optimizar la gestión empresarial.",
+    gradient: "from-slate-600 to-blue-700",
+  },
+  {
+    icon: Layers,
+    title: "SAP S/4HANA",
+    description: "Soluciones integrales con SAP S/4HANA para impulsar la transformación digital de tu empresa.",
+    gradient: "from-teal-600 to-cyan-600",
+  },
+  {
+    icon: Workflow,
+    title: "Power Apps",
+    description: "Desarrollamos soluciones personalizadas con Power Apps para optimizar tus procesos de negocio.",
+    gradient: "from-violet-600 to-purple-600",
+  },
+  {
+    icon: Bot,
+    title: "RPA Automatizaciones IA",
+    description: "Implementamos automatizaciones inteligentes con RPA e IA para mejorar la eficiencia operativa.",
+    gradient: "from-emerald-600 to-green-600",
+  },
+  {
+    icon: Database,
+    title: "Base de datos",
+    description: "Diseño, implementación y gestión de bases de datos robustas y escalables para tus aplicaciones.",
+    gradient: "from-orange-600 to-red-600",
   },
 ];
 

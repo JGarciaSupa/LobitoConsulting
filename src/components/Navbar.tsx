@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,15 +47,22 @@ export function Navbar() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-indigo-600 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative w-10 h-10 rounded-xl bg-linear-to-br from-purple-600 to-indigo-600 flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
+              <div className="relative w-10 h-10 flex items-center justify-center">
+                <Image 
+                  src="/logo.webp"
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  priority
+                />
+                {/* <Sparkles className="w-5 h-5 text-white" /> */}
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl bg-linear-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent tracking-tight">
+              <span className="text-xl bg-linear-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent tracking-tight italic">
                 Lobito
               </span>
-              <span className="text-xs text-purple-400 -mt-1">Consulting</span>
+              <span className="text-xs text-purple-400 -mt-1 italic">Consulting</span>
             </div>
           </motion.a>
 
