@@ -7,14 +7,16 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
+import { APP_CONFIG } from '@/config/globals';
+
 const projects = [
   {
     title: "E-Commerce Platform",
     description: "Plataforma de comercio electrónico moderna con carrito de compras, pasarela de pagos y panel de administración.",
     image: "https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDF8fHx8MTc2MTI3ODIxOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     technologies: ["React", "Node.js", "Stripe", "MongoDB"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/JGarciaSupa",
+    liveUrl: "https://github.com/JGarciaSupa/Maquina-Calera-Service",
     gradient: "from-blue-500 to-cyan-500",
   },
   {
@@ -22,8 +24,8 @@ const projects = [
     description: "Dashboard interactivo con visualización de datos en tiempo real, gráficos personalizables y reportes automatizados.",
     image: "https://images.unsplash.com/photo-1653307986572-d0176190386d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBkZXNpZ258ZW58MXx8fHwxNzYxMzE2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     technologies: ["Next.js", "TypeScript", "Recharts", "Tailwind"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/JGarciaSupa",
+    liveUrl: "https://github.com/JGarciaSupa/Maquina-Calera-Service",
     gradient: "from-purple-500 to-pink-500",
   },
   {
@@ -31,8 +33,8 @@ const projects = [
     description: "Aplicación móvil para seguimiento de ejercicios, planes de nutrición y rutinas personalizadas con IA.",
     image: "https://images.unsplash.com/photo-1613441583994-7080eafd6e6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBzY3JlZW58ZW58MXx8fHwxNzYxMjc2NzQ5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     technologies: ["React Native", "Firebase", "Redux", "Expo"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/JGarciaSupa",
+    liveUrl: "https://github.com/JGarciaSupa/Maquina-Calera-Service",
     gradient: "from-green-500 to-emerald-500",
   },
   {
@@ -40,8 +42,8 @@ const projects = [
     description: "Landing page de alto impacto para startup SaaS con animaciones avanzadas y formularios de conversión optimizados.",
     image: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYxMjI1NDQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     technologies: ["React", "Motion", "Tailwind", "Vite"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/JGarciaSupa",
+    liveUrl: "https://github.com/JGarciaSupa/Maquina-Calera-Service",
     gradient: "from-orange-500 to-red-500",
   },
   {
@@ -49,8 +51,8 @@ const projects = [
     description: "Plataforma de chat inteligente con integración de IA, mensajería en tiempo real y análisis de sentimientos.",
     image: "https://images.unsplash.com/photo-1579403124614-197f69d8187b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc2MTIyNDA2NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     technologies: ["Vue.js", "Socket.io", "OpenAI", "PostgreSQL"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/JGarciaSupa",
+    liveUrl: "https://github.com/JGarciaSupa/Maquina-Calera-Service",
     gradient: "from-indigo-500 to-purple-500",
   },
   {
@@ -58,8 +60,8 @@ const projects = [
     description: "Portal inmobiliario con búsqueda avanzada, tours virtuales 360° y sistema de gestión de propiedades.",
     image: "https://images.unsplash.com/photo-1672581437674-3186b17b405a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjEyODYzOTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     technologies: ["Angular", "NestJS", "GraphQL", "AWS"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/JGarciaSupa",
+    liveUrl: "https://github.com/JGarciaSupa/Maquina-Calera-Service",
     gradient: "from-yellow-500 to-orange-500",
   },
 ];
@@ -179,13 +181,18 @@ export function Portfolio() {
           <p className="text-gray-400 mb-6">
             ¿Tienes un proyecto en mente?
           </p>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8"
+          <a 
+            href={`https://wa.me/${APP_CONFIG.whatspp}?text=${APP_CONFIG.message}`}
+            target="_blank"
           >
-            Trabajemos Juntos
-            <ArrowUpRight className="ml-2 w-5 h-5" />
-          </Button>
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8"
+            >
+              Trabajemos Juntos
+              <ArrowUpRight className="ml-2 w-5 h-5" />
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>

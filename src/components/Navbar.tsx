@@ -6,6 +6,8 @@ import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 
+import { APP_CONFIG } from '@/config/globals';
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -83,17 +85,19 @@ export function Navbar() {
             ))}
           </div>
 
-          <motion.div
-            className="hidden md:block"
+          <motion.a
+            className="hidden md:block cursor-pointer"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
+            href={`https://wa.me/${APP_CONFIG.whatspp}?text=${APP_CONFIG.message}`}
+            target="_blank"
           >
             <Button className="relative bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 overflow-hidden group">
               <span className="relative z-10">Comenzar Proyecto</span>
               <div className="absolute inset-0 bg-linear-to-r from-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
-          </motion.div>
+          </motion.a>
 
           {/* Mobile Menu Button */}
           <motion.button
@@ -152,15 +156,18 @@ export function Navbar() {
                   {item.label}
                 </motion.a>
               ))}
-              <motion.div
+              <motion.a
+                className="cursor-pointer"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
+                href={`https://wa.me/${APP_CONFIG.whatspp}?text=${APP_CONFIG.message}`}
+                target="_blank"
               >
                 <Button className="w-full mt-4 bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white">
                   Comenzar Proyecto
                 </Button>
-              </motion.div>
+              </motion.a>
             </div>
           </motion.div>
         )}

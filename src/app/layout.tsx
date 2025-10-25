@@ -33,10 +33,7 @@ export const metadata: Metadata = {
     "tecnologías web",
     "software empresarial",
     "aplicaciones móviles"
-  ],
-  icons: {
-    icon: "/favicon.webp"
-  },
+  ]
 };
 
 export default function RootLayout({
@@ -45,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${poppins.variable} antialiased`}
       >

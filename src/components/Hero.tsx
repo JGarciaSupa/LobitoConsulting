@@ -5,6 +5,7 @@ import { ArrowRight, Code2, Rocket, Zap, Star } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { APP_CONFIG } from '@/config/globals';
 
 export function Hero() {
   // Estado para las partículas flotantes
@@ -114,8 +115,9 @@ export function Hero() {
               src="/logo.webp"
               alt="Lobito Consulting Logo"
               width={240}
-              height={240}
+              height={237}
               className="mx-auto mb-4"
+              priority
             />
             <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 tracking-tight flex">
               {/* <span className="block bg-linear-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
@@ -171,23 +173,31 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <Button
-              size="lg"
-              className="relative bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-10 py-7 group overflow-hidden"
+            <a 
+              className="relative z-10 flex items-center gap-2"
+              href={`https://wa.me/${APP_CONFIG.whatspp}?text=${APP_CONFIG.message}`}
+              target="_blank"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Comienza Tu Proyecto
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-linear-to-r from-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-purple-500/50 hover:bg-purple-500/10 hover:border-purple-400 text-white px-10 py-7 backdrop-blur-sm"
-            >
-              Explorar Servicios
-            </Button>
+              <Button
+                size="lg"
+                className="relative bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-10 py-7 group overflow-hidden"
+              >
+                <div className="relative z-10 flex items-center gap-2">
+                  Comienza Tu Proyecto
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <div className="absolute inset-0 bg-linear-to-r from-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Button>
+            </a>
+            <a href="#servicios">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-purple-500/50 hover:bg-purple-500/10 hover:border-purple-400 text-white px-10 py-7 backdrop-blur-sm"
+              >
+                Explorar Servicios
+              </Button>
+            </a>
           </motion.div>
           
           {/* Cards flotantes con servicios destacados */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { APP_CONFIG } from '@/config/globals';
 
 export function Footer() {
   return (
@@ -19,29 +20,29 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href={`mailto:${APP_CONFIG.email}?subject=${APP_CONFIG.subject}`}
                 className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center hover:bg-purple-500/20 transition-colors"
               >
                 <Mail className="w-5 h-5 text-purple-400" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center hover:bg-purple-500/20 transition-colors"
               >
                 <Github className="w-5 h-5 text-purple-400" />
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="#"
                 className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center hover:bg-purple-500/20 transition-colors"
               >
                 <Linkedin className="w-5 h-5 text-purple-400" />
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="#"
                 className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center hover:bg-purple-500/20 transition-colors"
               >
                 <Twitter className="w-5 h-5 text-purple-400" />
-              </a>
+              </a> */}
             </div>
           </div>
           
@@ -69,6 +70,36 @@ export function Footer() {
                   UI/UX Design
                 </a>
               </li>
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  Power BI & Analytics
+                </a>
+              </li>
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  SAP Business One
+                </a>
+              </li>
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  SAP S/4HANA
+                </a>
+              </li>
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  Power Apps
+                </a>
+              </li>
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  RPA Automatizaciones IA
+                </a>
+              </li>
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  Base de datos
+                </a>
+              </li>
             </ul>
           </div>
           
@@ -82,7 +113,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="#portfolio" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Portfolio
                 </a>
               </li>
@@ -91,11 +122,11 @@ export function Footer() {
                   Contacto
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Blog
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
