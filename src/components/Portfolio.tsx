@@ -68,7 +68,7 @@ const projects = [
 
 export function Portfolio() {
   return (
-    <section className="py-24 relative overflow-hidden" id="portfolio">
+    <section className="py-24 relative overflow-hidden" id="portafolio">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-indigo-950/10 to-background" />
       
       {/* Decorative elements */}
@@ -84,7 +84,7 @@ export function Portfolio() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-            Nuestro Portfolio
+            Nuestro Portafolio
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Proyectos que hemos desarrollado con éxito para nuestros clientes

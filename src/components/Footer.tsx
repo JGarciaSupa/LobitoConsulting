@@ -113,8 +113,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="text-gray-400 hover:text-purple-400 transition-colors">
-                  Portfolio
+                <a href="#portafolio" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  Portafolio
                 </a>
               </li>
               <li>

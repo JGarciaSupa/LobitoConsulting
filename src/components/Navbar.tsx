@@ -23,7 +23,7 @@ export function Navbar() {
   const navItems = [
     { label: "Inicio", href: "#" },
     { label: "Servicios", href: "#servicios" },
-    { label: "Portfolio", href: "#portfolio" },
+    { label: "Portafolio", href: "#portafolio" },
     { label: "Contacto", href: "#contacto" },
   ];
 
