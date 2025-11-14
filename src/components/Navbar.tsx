@@ -5,12 +5,15 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { APP_CONFIG } from '@/config/globals';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +24,10 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { label: "Inicio", href: "#" },
-    { label: "Servicios", href: "#servicios" },
-    { label: "Portafolio", href: "#portafolio" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Inicio", href: "/" },
+    { label: "Servicios", href: "/servicios" },
+    { label: "Portafolio", href: "/portafolio" },
+    { label: "Contacto", href: "/contacto" },
   ];
 
   return (
@@ -41,48 +44,58 @@ export function Navbar() {
       <div className="container max-w-360 mx-auto px-4 md:px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.a
-            href="#"
+          <motion.div
             className="flex items-center gap-3 group relative"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-indigo-600 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <Image 
-                  src="/logo.webp"
-                  alt="Logo"
-                  width={40}
-                  height={40}
-                  priority
-                />
-                {/* <Sparkles className="w-5 h-5 text-white" /> */}
+            <Link href="/" className="flex items-center gap-3">
+              <div className="relative">
+                <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-indigo-600 rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
+                <div className="relative w-10 h-10 flex items-center justify-center">
+                  <Image 
+                    src="/logo.webp"
+                    alt="Logo"
+                    width={40}
+                    height={40}
+                    priority
+                  />
+                  {/* <Sparkles className="w-5 h-5 text-white" /> */}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl bg-linear-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent tracking-tight italic">
-                Lobito
-              </span>
-              <span className="text-xs text-purple-400 -mt-1 italic">Consulting</span>
-            </div>
-          </motion.a>
+              <div className="flex flex-col">
+                <span className="text-xl bg-linear-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent tracking-tight italic">
+                  Lobito
+                </span>
+                <span className="text-xs text-purple-400 -mt-1 italic">Consulting</span>
+              </div>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                className="relative px-4 py-2 text-gray-300 hover:text-white transition-colors group"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.2 }}
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-purple-500 to-indigo-500 group-hover:w-3/4 transition-all duration-300" />
-              </motion.a>
-            ))}
+            {navItems.map((item, index) => {
+              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+              return (
+                <motion.div key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={`relative px-4 py-2 transition-colors group ${
+                      isActive 
+                        ? 'text-white' 
+                        : 'text-gray-300 hover:text-white'
+                    }`}
+                  >
+                    {item.label}
+                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-linear-to-r from-purple-500 to-indigo-500 transition-all duration-300 ${
+                      isActive 
+                        ? 'w-3/4' 
+                        : 'w-0 group-hover:w-3/4'
+                    }`} />
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           <motion.a
@@ -143,19 +156,29 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <div className="container max-w-360 mx-auto px-4 md:px-6 lg:px-12 py-6 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-purple-500/10 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {item.label}
-                </motion.a>
-              ))}
+              {navItems.map((item, index) => {
+                const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+                return (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`block px-4 py-3 rounded-lg transition-colors ${
+                        isActive 
+                          ? 'text-white bg-purple-500/20' 
+                          : 'text-gray-300 hover:text-white hover:bg-purple-500/10'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
               <motion.a
                 className="cursor-pointer"
                 initial={{ opacity: 0, x: -20 }}

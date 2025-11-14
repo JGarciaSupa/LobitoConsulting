@@ -189,7 +189,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-linear-to-r from-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Button>
             </a>
-            <a href="#servicios">
+            <a href="/servicios">
               <Button
                 size="lg"
                 variant="outline"

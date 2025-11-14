@@ -51,52 +51,52 @@ export function Footer() {
             <h4 className="mb-4 text-white">Servicios</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Landing Pages
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Software a Medida
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Desarrollo Mobile
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   UI/UX Design
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Power BI & Analytics
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   SAP Business One
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   SAP S/4HANA
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Power Apps
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   RPA Automatizaciones IA
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/servicios" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Base de datos
                 </a>
               </li>
@@ -113,12 +113,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#portafolio" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/portafolio" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Portafolio
                 </a>
               </li>
               <li>
-                <a href="#contacto" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <a href="/contacto" className="text-gray-400 hover:text-purple-400 transition-colors">
                   Contacto
                 </a>
               </li>
