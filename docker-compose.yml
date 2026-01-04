@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:18-alpine
+    working_dir: /usr/src/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    command: sh -c "npm install --silent || true && npm run dev"
+    # El puerto queda comentado porque uso Nginx Proxy Manager
+    # ports:
+    #   - "3000:3000"
+    networks:
+      - red-web
+
+networks:
+  red-web:
+    external: true
