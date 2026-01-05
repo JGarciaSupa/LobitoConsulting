@@ -1,0 +1,12 @@
+node_modules
+.next
+dist
+build
+.env
+.vscode
+.idea
+.git
+npm-debug.log
+.DS_Store
+Dockerfile.dev
+docker-compose.override.yml

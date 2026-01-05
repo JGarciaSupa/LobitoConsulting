@@ -6,13 +6,14 @@ services:
     working_dir: /usr/src/app
     environment:
       - NODE_ENV=development
+      - PORT=3500
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
     command: sh -c "npm install --silent || true && npm run dev"
-    # El puerto queda comentado porque uso Nginx Proxy Manager
-    # ports:
-    #   - "3000:3000"
+    # Mapeo de puerto para desarrollo (exponer 3500)
+    ports:
+      - "3500:3500"
     networks:
       - red-web
 
